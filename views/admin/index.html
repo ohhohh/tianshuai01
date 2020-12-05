@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #header {
+            height: 20vh;
+            /*background-color: lightblue;*/
+            background: -webkit-repeating-linear-gradient(0,blue, #f148c7,blue);
+        }
+
+        #main {
+            height: 80vh;
+        }
+
+        #main .menu {
+            /*background-color: lightgreen;*/
+            overflow: auto;
+        }
+
+        #main>div,
+        #main>div>div {
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        #header .avatar {
+            height: 60px;
+            float: left;
+        }
+
+        #header .avatar img {
+            height: 100%;
+        }
+
+        #header .info {}
+    </style>
+</head>
+
+<body>
+    <div id="header" class="container-fluid">
+        <div class="avatar">
+            <img src="/images/01.jpg" alt="" class="img-circle">
+        </div>
+        <div class="info pull-left">
+            欢迎管理员: {{admin.admin_name}}
+        </div>
+        <a href="/admin/logout" class="btn btn-danger pull-right" onclick="return confirm('确认注销?')">注销</a>
+    </div>
+    <div id="main" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 menu">
+                <div class="list-group meun-con">
+                    <h3 class="list-group-item active">
+                        管理员
+                    </h3>
+                    <a href="/admin/admin_list.html" class="list-group-item" target="iFrame">管理员列表</a>
+                    <a href="/admin/admin_list.html" class="list-group-item" target="iFrame">添加管理员</a>
+                    <a href="/admin/password.html" class="list-group-item" target="iFrame">修改密码</a>
+                </div>
+                <div>
+                    <h3 class=" list-group-item active">分类</h3>
+                    <ul>
+                        <li><a href="" class="list-group-item" target="iFrame">导航列表</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="list-group-item active">新闻</h3>
+                    <ul>
+                        <li><a href="/admin/page/1" class="list-group-item" target="iFrame">新闻列表</a></li>
+                        <li><a href="/admin/news" class="list-group-item" target="iFrame">添加新闻</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="list-group-item active">产品</h3>
+                    <ul>
+                        <li><a href="" class="list-group-item" target="iFrame">产品列表</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="list-group-item active">单页</h3>
+                    <ul>
+                        <li><a href="" class="list-group-item" target="iFrame">单页列表</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-sm-10">
+                <iframe src="/admin/main.html" frameborder="0" name="iFrame"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="/jquery/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

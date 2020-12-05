@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<ul>
+    {{each news_list}}
+    <li><a href="/news/{{$value.id}}">{{$value.title}}---{{$value.create_time}}</a></li>
+    {{/each}}
+</ul>
+
+</body>
+</html>

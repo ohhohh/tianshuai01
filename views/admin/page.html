@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+</head>
+<body>
+<ul>
+    {{each lists}}
+    <li>
+        {{$value.id}}----{{$value.category}}
+    </li>
+    {{/each}}
+</ul>
+
+
+
+共 {{total}} 条记录 当前第{{page}}/{{pages}}页
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li>
+            <a href="/admin/page/{{page-1}}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {{@ page_views}}
+        <li>
+            <a href="/admin/page/{{page-0+1}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+</body>
+</html>
